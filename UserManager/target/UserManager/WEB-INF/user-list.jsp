@@ -1,10 +1,5 @@
 <%@ page import="com.softserve.itacademy.User" %>
-<%@ page import="java.util.List" %><%--
-  Created by IntelliJ IDEA.
-  User: Vlad
-  Date: 24.05.20
-  Time: 10:59
---%>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
