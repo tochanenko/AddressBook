@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Show info for Record</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 

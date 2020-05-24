@@ -4,7 +4,9 @@
 <html>
 <head>
     <title>Users List</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        <%@include file="style.css"%>
+    </style>
 </head>
 <body>
 

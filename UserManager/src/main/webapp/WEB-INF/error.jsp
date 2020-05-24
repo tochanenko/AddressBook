@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>Error!</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        <%@include file="style.css"%>
+    </style>
 </head>
 <body>
 <%@include file="header.html" %>
