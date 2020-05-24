@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/records/list")
-public class UserListServlet extends HttpServlet {
+public class RecordListServlet extends HttpServlet {
 
     private AddressBook book;
 
@@ -22,7 +22,7 @@ public class UserListServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/user-list.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/record-list.jsp");
 
         String sorted = request.getParameter("sort");
 

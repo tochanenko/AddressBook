@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/records/update")
-public class UpdateUserServlet extends HttpServlet {
+public class UpdateRecordServlet extends HttpServlet {
 
     private AddressBook book;
     String firstName;
@@ -48,6 +48,6 @@ public class UpdateUserServlet extends HttpServlet {
         request.setAttribute("first-name", firstName);
         request.setAttribute("last-name", lastName);
         request.setAttribute("address", address);
-        request.getRequestDispatcher("/WEB-INF/update-user.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/update-record.jsp").forward(request, response);
     }
 }

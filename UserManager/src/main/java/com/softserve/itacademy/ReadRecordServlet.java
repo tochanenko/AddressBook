@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/records/delete")
-public class DeleteUserServlet extends HttpServlet {
+@WebServlet("/records/read")
+public class ReadRecordServlet extends HttpServlet {
 
     private AddressBook book;
 
@@ -20,11 +20,20 @@ public class DeleteUserServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (!book.delete(request.getParameter("first-name"), request.getParameter("last-name"))) {
+        String firstName = request.getParameter("first-name");
+        String lastName = request.getParameter("last-name");
+
+        String address = book.read(firstName, lastName);
+
+        if (address == null) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
 
-        response.sendRedirect("/records/list");
+        request.setAttribute("first-name", firstName);
+        request.setAttribute("last-name", lastName);
+        request.setAttribute("address", address);
+
+        request.getRequestDispatcher("/WEB-INF/read-record.jsp").forward(request, response);
     }
 }

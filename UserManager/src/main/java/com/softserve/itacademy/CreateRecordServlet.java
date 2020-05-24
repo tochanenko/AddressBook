@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/records/create")
-public class CreateUserServlet extends HttpServlet {
+public class CreateRecordServlet extends HttpServlet {
 
     private AddressBook book;
 
@@ -30,6 +30,6 @@ public class CreateUserServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("/WEB-INF/create-user.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/create-record.jsp").forward(request, response);
     }
 }
