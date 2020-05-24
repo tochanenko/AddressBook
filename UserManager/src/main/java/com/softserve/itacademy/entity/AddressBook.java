@@ -4,10 +4,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Objects;
 
-enum SortOrder {
-    ASC, DESC
-}
-
 @SuppressWarnings("unchecked")
 public class AddressBook implements Iterable {
     private static AddressBook addressBookInstance = null;

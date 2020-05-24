@@ -1,8 +1,6 @@
 package com.softserve.itacademy;
 
 import com.softserve.itacademy.entity.AddressBook;
-import com.softserve.itacademy.entity.User;
-import com.softserve.itacademy.entity.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,11 +23,12 @@ public class ReadUserServlet extends HttpServlet {
         String firstName = request.getParameter("first-name");
         String lastName = request.getParameter("last-name");
 
-        if (book.read(firstName, lastName) == null) {
-            response.sendRedirect("/error");
+        String address = book.read(firstName, lastName);
+
+        if (address == null) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        String address = book.read(firstName, lastName);
 
         request.setAttribute("first-name", firstName);
         request.setAttribute("last-name", lastName);

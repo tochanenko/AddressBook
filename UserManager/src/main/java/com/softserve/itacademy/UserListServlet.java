@@ -1,7 +1,7 @@
 package com.softserve.itacademy;
 
 import com.softserve.itacademy.entity.AddressBook;
-import com.softserve.itacademy.entity.UserDao;
+import com.softserve.itacademy.entity.SortOrder;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,6 +23,20 @@ public class UserListServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/user-list.jsp");
+
+        String sorted = request.getParameter("sort");
+
+        if (sorted != null) {
+            if (sorted.equals("asc"))
+                book.sortedBy(SortOrder.ASC);
+            else if (sorted.equals("desc"))
+                book.sortedBy(SortOrder.DESC);
+            else {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
+        }
+
         request.setAttribute("book", book);
         requestDispatcher.forward(request, response);
     }

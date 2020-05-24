@@ -1,7 +1,6 @@
 package com.softserve.itacademy;
 
-import com.softserve.itacademy.entity.User;
-import com.softserve.itacademy.entity.UserDao;
+import com.softserve.itacademy.entity.AddressBook;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,25 +12,42 @@ import java.io.IOException;
 @WebServlet("/records/update")
 public class UpdateUserServlet extends HttpServlet {
 
-    private UserDao userDao;
-    private User user;
+    private AddressBook book;
+    String firstName;
+    String lastName;
 
     @Override
     public void init() {
-        userDao = UserDao.getInstance();
+        book = AddressBook.getInstance();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        user.setUsername(request.getParameter("username"));
-        user.setPassword(request.getParameter("password"));
-        userDao.update(user.getId(), user);
+        if (!book.update(
+                firstName,
+                lastName,
+                request.getParameter("address")
+        )) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
         response.sendRedirect("/records/list");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        user = userDao.read(Integer.parseInt(request.getParameter("id")));
+        firstName = request.getParameter("first-name");
+        lastName = request.getParameter("last-name");
 
-        request.setAttribute("user", user);
+        String address = book.read(firstName, lastName);
+
+        if (address == null) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        request.setAttribute("first-name", firstName);
+        request.setAttribute("last-name", lastName);
+        request.setAttribute("address", address);
         request.getRequestDispatcher("/WEB-INF/update-user.jsp").forward(request, response);
     }
 }

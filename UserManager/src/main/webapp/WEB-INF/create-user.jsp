@@ -12,7 +12,7 @@
     <table>
         <tr>
             <td>
-                <label for="name">First Name: </label>
+                <label for="first-name">First Name: </label>
             </td>
             <td>
                 <input type="text" id="first-name" name="first-name">

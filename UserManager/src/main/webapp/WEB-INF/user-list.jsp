@@ -12,6 +12,8 @@
 
 <%@include file="header.html"%>
 
+<p>Sort by: <a href="/records/list?sort=asc">ascending</a> | <a href="/records/list?sort=desc">descending</a></p>
+
 <table>
     <tr>
         <th>First Name</th>

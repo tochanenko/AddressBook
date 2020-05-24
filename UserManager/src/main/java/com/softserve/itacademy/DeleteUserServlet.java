@@ -21,7 +21,7 @@ public class DeleteUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (!book.delete(request.getParameter("first-name"), request.getParameter("last-name"))) {
-            response.sendRedirect("/error");
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
 

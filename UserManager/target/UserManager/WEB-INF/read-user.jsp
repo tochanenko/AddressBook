@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Show info for User</title>
+    <title>Show info for Record</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>

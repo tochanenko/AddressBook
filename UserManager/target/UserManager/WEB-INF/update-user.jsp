@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Update User</title>
+    <title>Update Record</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
@@ -10,29 +10,35 @@
 <%@include file="header.html"%>
 
 <%
-    User user = (User) request.getAttribute("user");
+    String firstName = (String)request.getAttribute("first-name");
+    String lastName = (String)request.getAttribute("last-name");
+    String address = (String)request.getAttribute("address");
 %>
 
-<form action="/users/update" method="post">
+<form action="/records/update" method="post">
     <table>
         <tr>
-            <td><label for="id">Id: </label></td>
-            <td><input type="text" id="id" name="id" value="<%=user.getId()%>" disabled></td>
-        </tr>
-        <tr>
             <td>
-                <label for="username">Username: </label>
+                <label for="first-name">First Name: </label>
             </td>
             <td>
-                <input type="text" id="username" name="username" value="<%=user.getUsername()%>">
+                <input type="text" id="first-name" name="first-name" value="<%=firstName%>" disabled>
             </td>
         </tr>
         <tr>
             <td>
-                <label for="password">Password: </label>
+                <label for="last-name">Last Name: </label>
             </td>
             <td>
-                <input type="password" id="password" name="password" value="<%=user.getPassword()%>">
+                <input type="text" id="last-name" name="last-name" value="<%=lastName%>" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="address">Address: </label>
+            </td>
+            <td>
+                <input type="text" id="address" name="address" value="<%=address%>">
             </td>
         </tr>
         <tr>
