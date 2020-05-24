@@ -14,7 +14,7 @@ public class UpdateUserServlet extends HttpServlet {
     private User user;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         userDao = UserDao.getInstance();
     }
 

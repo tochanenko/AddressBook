@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/users/create")
 public class CreateUserServlet extends HttpServlet {
@@ -14,7 +13,7 @@ public class CreateUserServlet extends HttpServlet {
     private UserDao userDao;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         userDao = UserDao.getInstance();
     }
 
