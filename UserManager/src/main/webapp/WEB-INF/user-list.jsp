@@ -1,6 +1,7 @@
 <%@ page import="com.softserve.itacademy.entity.User" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.softserve.itacademy.entity.AddressBook" %>
+<%@ page import="com.softserve.itacademy.Util" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,25 +14,25 @@
 
 <table>
     <tr>
-        <th>Id</th>
-        <th>Username</th>
-        <th>Password</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
         <th colspan="3">Operations</th>
     </tr>
 
     <%
         for (Object address : (AddressBook)request.getAttribute("book")) {
+            String record = address.toString();
+            String[] fields = Util.getFields(record);
     %>
 
-    <p><%=address.toString()%></p>
-
     <tr>
-<%--        <td><%=user.getId()%></td>--%>
-<%--        <td><%=user.getUsername()%></td>--%>
-<%--        <td><%=user.getPassword()%></td>--%>
-<%--        <td><a href="/users/read?id=<%=book.iterator().getId()%>">Read</a></td>--%>
-<%--        <td><a href="/users/update?id=<%=user.getId()%>">Update</a></td>--%>
-<%--        <td><a href="/users/delete?id=<%=user.getId()%>">Delete</a></td>--%>
+        <td><%=fields[0]%></td>
+        <td><%=fields[1]%></td>
+        <td><%=fields[2]%></td>
+        <td><a href="/records/read?first-name=<%=fields[0]%>&last-name=<%=fields[1]%>">Read</a></td>
+        <td><a href="/records/update?first-name=<%=fields[0]%>&last-name=<%=fields[1]%>">Update</a></td>
+        <td><a href="/records/delete?first-name=<%=fields[0]%>&last-name=<%=fields[1]%>">Delete</a></td>
     </tr>
 
     <%

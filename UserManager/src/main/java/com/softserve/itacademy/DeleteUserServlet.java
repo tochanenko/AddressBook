@@ -1,6 +1,6 @@
 package com.softserve.itacademy;
 
-import com.softserve.itacademy.entity.UserDao;
+import com.softserve.itacademy.entity.AddressBook;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,15 +12,19 @@ import java.io.IOException;
 @WebServlet("/records/delete")
 public class DeleteUserServlet extends HttpServlet {
 
-    private UserDao userDao;
+    private AddressBook book;
 
     @Override
     public void init() {
-        userDao = UserDao.getInstance();
+        book = AddressBook.getInstance();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        userDao.delete(Integer.parseInt(request.getParameter("id")));
-        response.sendRedirect("/users/list");
+        if (!book.delete(request.getParameter("first-name"), request.getParameter("last-name"))) {
+            response.sendRedirect("/error");
+            return;
+        }
+
+        response.sendRedirect("/records/list");
     }
 }

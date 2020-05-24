@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create new User</title>
+    <title>Create new Record</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
@@ -12,18 +12,18 @@
     <table>
         <tr>
             <td>
-                <label for="name">Name: </label>
+                <label for="name">First Name: </label>
             </td>
             <td>
-                <input type="text" id="name" name="name">
+                <input type="text" id="first-name" name="first-name">
             </td>
         </tr>
         <tr>
             <td>
-                <label for="surname">Surname: </label>
+                <label for="last-name">Last Name: </label>
             </td>
             <td>
-                <input type="text" id="surname" name="surname">
+                <input type="text" id="last-name" name="last-name">
             </td>
         </tr>
         <tr>

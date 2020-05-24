@@ -1,8 +1,6 @@
 package com.softserve.itacademy;
 
 import com.softserve.itacademy.entity.AddressBook;
-import com.softserve.itacademy.entity.User;
-import com.softserve.itacademy.entity.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,11 +20,11 @@ public class CreateUserServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
+        String firstName = request.getParameter("first-name");
+        String lastName = request.getParameter("last-name");
         String address = request.getParameter("address");
 
-        book.create(name, surname, address);
+        book.create(firstName, lastName, address);
 
         response.sendRedirect("/records/list");
     }
