@@ -10,6 +10,6 @@
 <%@include file="header.html" %>
 
 <body>
-<h1>Ooops! Something went wrong!</h1>
+<h3>Ooops! Something went wrong!</h3>
 </body>
 </html>
