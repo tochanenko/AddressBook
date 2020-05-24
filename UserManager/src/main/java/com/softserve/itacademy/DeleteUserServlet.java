@@ -1,5 +1,7 @@
 package com.softserve.itacademy;
 
+import com.softserve.itacademy.entity.UserDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/users/delete")
+@WebServlet("/records/delete")
 public class DeleteUserServlet extends HttpServlet {
 
     private UserDao userDao;

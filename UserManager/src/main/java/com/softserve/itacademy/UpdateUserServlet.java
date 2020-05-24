@@ -1,5 +1,8 @@
 package com.softserve.itacademy;
 
+import com.softserve.itacademy.entity.User;
+import com.softserve.itacademy.entity.UserDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/users/update")
+@WebServlet("/records/update")
 public class UpdateUserServlet extends HttpServlet {
 
     private UserDao userDao;
@@ -22,7 +25,7 @@ public class UpdateUserServlet extends HttpServlet {
         user.setUsername(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
         userDao.update(user.getId(), user);
-        response.sendRedirect("/users/list");
+        response.sendRedirect("/records/list");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,4 +1,4 @@
-<%@ page import="com.softserve.itacademy.User" %>
+<%@ page import="com.softserve.itacademy.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,7 +15,7 @@
 
     <p><b>Id:</b> <%=user.getId()%></p>
     <p><b>Username:</b> <%=user.getUsername()%></p>
-    <p><b>Password:</b> <%=user.getPassword()%></p>
+    <p><b>Address:</b> <%=user.getPassword()%></p>
 
 </body>
 </html>

@@ -8,22 +8,30 @@
 
 <%@include file="header.html"%>
 
-<form action="/users/create" method="post">
+<form action="/records/create" method="post">
     <table>
         <tr>
             <td>
-                <label for="username">Username: </label>
+                <label for="name">Name: </label>
             </td>
             <td>
-                <input type="text" id="username" name="username">
+                <input type="text" id="name" name="name">
             </td>
         </tr>
         <tr>
             <td>
-                <label for="password">Password: </label>
+                <label for="surname">Surname: </label>
             </td>
             <td>
-                <input type="password" id="password" name="password">
+                <input type="text" id="surname" name="surname">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="address">Address: </label>
+            </td>
+            <td>
+                <input type="text" id="address" name="address">
             </td>
         </tr>
         <tr>

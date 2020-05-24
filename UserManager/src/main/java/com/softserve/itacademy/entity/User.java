@@ -1,4 +1,4 @@
-package com.softserve.itacademy;
+package com.softserve.itacademy.entity;
 
 public class User {
     private int id;

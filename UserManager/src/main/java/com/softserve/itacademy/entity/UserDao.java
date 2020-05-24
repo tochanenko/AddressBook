@@ -1,4 +1,4 @@
-package com.softserve.itacademy;
+package com.softserve.itacademy.entity;
 
 import java.util.LinkedList;
 import java.util.List;

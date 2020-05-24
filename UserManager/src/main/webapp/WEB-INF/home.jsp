@@ -8,7 +8,7 @@
 
 <%@include file="header.html"%>
 
-<h3>Welcome to Awesome User Manager</h3>
+<h3>Welcome to Awesome Address Book!</h3>
 
 </body>
 </html>
