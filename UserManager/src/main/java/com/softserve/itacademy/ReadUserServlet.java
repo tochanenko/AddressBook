@@ -1,5 +1,6 @@
 package com.softserve.itacademy;
 
+import com.softserve.itacademy.entity.AddressBook;
 import com.softserve.itacademy.entity.User;
 import com.softserve.itacademy.entity.UserDao;
 
@@ -13,17 +14,27 @@ import java.io.IOException;
 @WebServlet("/records/read")
 public class ReadUserServlet extends HttpServlet {
 
-    private UserDao userDao;
+    private AddressBook book;
 
     @Override
     public void init() {
-        userDao = UserDao.getInstance();
+        book = AddressBook.getInstance();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = userDao.read(Integer.parseInt(request.getParameter("id")));
+        String firstName = request.getParameter("first-name");
+        String lastName = request.getParameter("last-name");
 
-        request.setAttribute("user", user);
+        if (book.read(firstName, lastName) == null) {
+            response.sendRedirect("/error");
+            return;
+        }
+        String address = book.read(firstName, lastName);
+
+        request.setAttribute("first-name", firstName);
+        request.setAttribute("last-name", lastName);
+        request.setAttribute("address", address);
+
         request.getRequestDispatcher("/WEB-INF/read-user.jsp").forward(request, response);
     }
 }

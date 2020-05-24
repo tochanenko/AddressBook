@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Show info for User</title>
+    <title>Show info for Record</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
@@ -10,12 +10,14 @@
 <%@include file="header.html"%>
 
 <%
-    User user = (User) request.getAttribute("user");
+    String firstName = (String)request.getAttribute("first-name");
+    String lastName = (String)request.getAttribute("last-name");
+    String address = (String)request.getAttribute("address");
 %>
 
-    <p><b>Id:</b> <%=user.getId()%></p>
-    <p><b>Username:</b> <%=user.getUsername()%></p>
-    <p><b>Address:</b> <%=user.getPassword()%></p>
+    <p><b>First Name:</b> <%=firstName%></p>
+    <p><b>Last Name:</b> <%=lastName%></p>
+    <p><b>Address:</b> <%=address%></p>
 
 </body>
 </html>
