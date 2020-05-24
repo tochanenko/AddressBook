@@ -21,7 +21,7 @@ public class UpdateRecordServlet extends HttpServlet {
         book = AddressBook.getInstance();
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         if (!book.update(
                 firstName,
                 lastName,

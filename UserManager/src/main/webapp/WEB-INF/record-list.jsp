@@ -8,9 +8,10 @@
         <%@include file="style.css"%>
     </style>
 </head>
-<body>
 
-<%@include file="header.html"%>
+<%@include file="header.html" %>
+
+<body>
 
 <p>Sort by: <a href="/records/list?sort=asc">ascending</a> | <a href="/records/list?sort=desc">descending</a></p>
 

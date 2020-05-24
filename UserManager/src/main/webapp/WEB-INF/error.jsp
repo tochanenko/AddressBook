@@ -6,8 +6,10 @@
         <%@include file="style.css"%>
     </style>
 </head>
-<body>
+
 <%@include file="header.html" %>
+
+<body>
 <h1>Ooops! Something went wrong!</h1>
 </body>
 </html>

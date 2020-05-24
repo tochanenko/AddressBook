@@ -6,9 +6,10 @@
         <%@include file="style.css"%>
     </style>
 </head>
-<body>
 
-<%@include file="header.html"%>
+<%@include file="header.html" %>
+
+<body>
 
 <h3>Welcome to Awesome Address Book!</h3>
 

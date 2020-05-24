@@ -2,11 +2,14 @@
 <html>
 <head>
     <title>Update Record</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        <%@include file="style.css"%>
+    </style>
 </head>
-<body>
 
-<%@include file="header.html"%>
+<%@include file="header.html" %>
+
+<body>
 
 <%
     String firstName = (String)request.getAttribute("first-name");
