@@ -7,13 +7,15 @@
 </head>
 <body>
 
+<%@include file="header.html"%>
+
 <%
     User user = (User) request.getAttribute("user");
 %>
 
-    <p>Id: <%=user.getId()%></p>
-    <p>Username: <%=user.getUsername()%></p>
-    <p>Password: <%=user.getPassword()%></p>
+    <p><b>Id:</b> <%=user.getId()%></p>
+    <p><b>Username:</b> <%=user.getUsername()%></p>
+    <p><b>Password:</b> <%=user.getPassword()%></p>
 
 </body>
 </html>

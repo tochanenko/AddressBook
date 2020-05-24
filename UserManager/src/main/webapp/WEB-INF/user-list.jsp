@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
+
+<%@include file="header.html"%>
+
 <table>
     <tr>
         <th>Id</th>
@@ -33,5 +36,6 @@
     %>
 
 </table>
+
 </body>
 </html>

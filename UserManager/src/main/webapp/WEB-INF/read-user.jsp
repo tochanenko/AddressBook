@@ -7,6 +7,8 @@
 </head>
 <body>
 
+<%@include file="header.html"%>
+
 <%
     User user = (User) request.getAttribute("user");
 %>

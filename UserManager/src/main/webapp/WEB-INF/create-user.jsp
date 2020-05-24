@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<%@include file="header.html"%>
+
 <form action="/users/create" method="post">
     <table>
         <tr>
