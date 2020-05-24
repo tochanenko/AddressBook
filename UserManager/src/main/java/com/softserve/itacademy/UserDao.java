@@ -6,6 +6,19 @@ import java.util.List;
 public class UserDao {
     private List<User> users = new LinkedList<>();
 
+    private static UserDao userDaoInstance = null;
+
+    private UserDao() {
+
+    }
+
+    public static UserDao getInstance() {
+        if (userDaoInstance == null) {
+            userDaoInstance = new UserDao();
+        }
+        return userDaoInstance;
+    }
+
     public boolean create(User user) {
         if (user != null) {
             return users.add(user);
